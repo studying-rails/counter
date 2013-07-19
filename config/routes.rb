@@ -1,4 +1,10 @@
 Counter::Application.routes.draw do
+  root to: 'counters#show'
+  resource :counter, only: 'show' do
+    post :inc
+    post :dec
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
